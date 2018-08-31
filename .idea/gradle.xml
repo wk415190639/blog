@@ -9,6 +9,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/jnidemo" />
+            <option value="$PROJECT_DIR$/nativeactivity" />
             <option value="$PROJECT_DIR$/threadlocal" />
           </set>
         </option>
