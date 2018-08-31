@@ -12,10 +12,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        RefObj refObj = new RefObj();
-        new CustomThread(refObj).start();
+        ThreadLocal<RefObj> threadLocal = new ThreadLocal();
 
-        new CustomThread(refObj).start();
+        threadLocal.set(new RefObj(100));
+
+        new CustomThread(threadLocal).start();
+
+        new CustomThread(threadLocal).start();
 
 
         try {
@@ -24,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         catch (Exception e){
 
         }
-        Log.i(TAG, "MAIN run: refObj.flag:"+refObj.flag);
+        Log.i(TAG, "MAIN run: refObj.flag:"+threadLocal.get().flag);
 
     }
 }

@@ -6,11 +6,12 @@ public class CustomThread extends Thread {
 
     String TAG = "CustomThread";
 
-    private RefObj refObj;
+
+    ThreadLocal<RefObj> threadLocal;
 
 
-    public CustomThread(RefObj obj) {
-        this.refObj = obj;
+    public CustomThread(ThreadLocal threadLocal) {
+        this.threadLocal = threadLocal;
     }
 
     @Override
@@ -18,10 +19,11 @@ public class CustomThread extends Thread {
         super.run();
 
 
-        ThreadLocal<RefObj> threadLocal = new ThreadLocal();
-        threadLocal.set(refObj);
+        Log.i(TAG, "run: threadLocal.get():" + threadLocal.get());
 
-        threadLocal.get().atomic_add_local();
+        double random = Math.random()*1000;
+        threadLocal.set(new RefObj(random));
+
 
         Log.i(TAG, "run: threadLocal.get().flag:" + threadLocal.get().flag);
 
