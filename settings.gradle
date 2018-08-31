@@ -1,1 +1,1 @@
-include ':jnidemo',":threadlocal",":nativeactivity",":multhread",":looper"
+include ':jnidemo', ':threaddemo',":threadlocal",":nativeactivity",":multhread",":looper"

@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$/looper" />
             <option value="$PROJECT_DIR$/multhread" />
             <option value="$PROJECT_DIR$/nativeactivity" />
+            <option value="$PROJECT_DIR$/threaddemo" />
             <option value="$PROJECT_DIR$/threadlocal" />
           </set>
         </option>
