@@ -13,10 +13,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         RefObj refObj = new RefObj();
+        new CustomThread(refObj).start();
 
-        new CustomThread(refObj,true).start();
-        new CustomThread(refObj,true).start();
-        new CustomThread(refObj,false).start();
+        new CustomThread(refObj).start();
+
+
+        try {
+            Thread.sleep(10);
+        }
+        catch (Exception e){
+
+        }
         Log.i(TAG, "MAIN run: refObj.flag:"+refObj.flag);
 
     }
